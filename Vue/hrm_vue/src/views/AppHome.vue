@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div id="apphome">
     <h1>
-      Home
+      홈페이지
     </h1>
   </div>
 </template>
@@ -14,3 +14,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#apphome {
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+}
+</style>

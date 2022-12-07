@@ -1,13 +1,12 @@
 <template>
   <div id="app">
-    <nav>
-      <!-- Before-Login -->
-      <router-link to="/login">Login</router-link>
-      <!-- After-Login -->
-      <router-link to="/">홈 page</router-link>
-      <router-link to="/employee">계정 page</router-link>
-      <router-link to="/timeline">출퇴근&사내이동 page</router-link>
-    </nav>
+    <div id="wrapper">
+      <router-view name="header"></router-view>
+      <main>
+        <router-view></router-view>
+      </main>
+    </div>
+    <router-view name="footer"></router-view>
   </div>
 </template>
 
@@ -20,13 +19,11 @@
   color: #2c3e50;
 }
 
-nav a {
-  padding: 30px;
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-nav a.router-link-exact-active {
-  color: #42b983;
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
 }
 </style>

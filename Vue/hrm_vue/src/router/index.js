@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import AppHome from '@/views/AppHome.vue'
+import AppHeader from '@/components/common/AppHeader.vue'
+import AppFooter from '@/components/common/AppFooter.vue'
 import AppLogin from '@/views/AppLogin.vue'
 import AppEmployee from '@/views/AppEmployee.vue'
 import AppTimeline from '@/views/AppTimeline.vue'
@@ -11,22 +13,38 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: AppHome
+    components: {
+      header: AppHeader,
+      default: AppHome,
+      footer: AppFooter
+    }
   },
   {
     path: '/login',
     name: 'login',
-    component: AppLogin
+    components: {
+      header: AppHeader,
+      default: AppLogin,
+      footer: AppFooter
+    }
   },
   {
     path: '/employee',
     name: 'employee',
-    component: AppEmployee
+    components: {
+      header: AppHeader,
+      default: AppEmployee,
+      footer: AppFooter
+    }
   },
   {
     path: '/timeline',
     name: 'timeline',
-    component: AppTimeline
+    components: {
+      header: AppHeader,
+      default: AppTimeline,
+      footer: AppFooter
+    }
   },
 ]
 
