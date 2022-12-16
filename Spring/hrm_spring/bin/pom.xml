@@ -15,6 +15,7 @@
 	<description>ssdam project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -65,6 +66,50 @@
 		    <artifactId>swagger-annotations</artifactId>
 		    <version>1.6.2</version>
 		</dependency>
+		
+		<!-- 하이버네이트 -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<!-- <dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <artifactId>hibernate-entitymanager</artifactId>
+		    <version>5.3.1.Final</version>
+		</dependency> -->
+		
+		<!-- <dependency>
+		  <groupId>org.hibernate</groupId>
+		  <artifactId>hibernate-core</artifactId>
+		  <version>5.6.14.Final</version>
+		</dependency>
+		
+		<dependency>
+		  <groupId>org.hibernate</groupId>
+		  <artifactId>hibernate-entitymanager</artifactId>
+		  <version>6.0.0.Alpha7</version>
+		  <type>pom</type>
+		</dependency> -->
+		
+		
+		<!-- 메이븐 플러그인 -->
+		<!-- <dependency>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-resources-plugin</artifactId>
+		    <version>2.4.3</version>
+		</dependency> -->
+		
+		
+		<dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.3.10.Final</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.6</version>
+        </dependency>
+        
 		
 	</dependencies>
 

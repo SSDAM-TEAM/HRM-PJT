@@ -1,11 +1,12 @@
 <template>
   <header>
-    <nav class="topbar navbar navbar-expand-sm">
+    <b-navbar class="topbar navbar navbar-expand-sm">
       <router-link to="/" class="navbar-brand" style="margin-left: 20px;">
         <img src="@/assets/logo.png" alt="logo" style="width: 40px;">
       </router-link>
       <h2>HRM</h2>
-    </nav>
+      <router-link to="/employee" class="nav-link">계정</router-link>
+    </b-navbar>
 
     <nav class="sidebar collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav" style="padding: 0;">
@@ -13,7 +14,7 @@
           <router-link to="/" class="nav-link">홈</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="employee" class="nav-link">계정</router-link>
+          <router-link to="/employee" class="nav-link">계정</router-link>
         </li>
         <li class="nav-item">
           <router-link to="timeline" class="nav-link">출입 기록</router-link>

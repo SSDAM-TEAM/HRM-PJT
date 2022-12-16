@@ -7,6 +7,9 @@ import AppLogin from '@/views/AppLogin.vue'
 import AppEmployee from '@/views/AppEmployee.vue'
 import AppTimeline from '@/views/AppTimeline.vue'
 
+import EmHome from '@/components/employee/EmployeeHome.vue'
+import EmCreate from '@/components/employee/EmployeeCreate.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -29,13 +32,17 @@ const routes = [
     }
   },
   {
-    path: '/employee',
+    path: '/employee/',
     name: 'employee',
     components: {
       header: AppHeader,
       default: AppEmployee,
       footer: AppFooter
-    }
+    },
+    children: [
+      {path: '', component: EmHome},
+      {path: 'emcreate', component: EmCreate}
+    ]
   },
   {
     path: '/timeline',
