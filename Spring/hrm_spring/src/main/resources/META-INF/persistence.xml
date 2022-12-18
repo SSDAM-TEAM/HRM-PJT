@@ -2,8 +2,14 @@
 <persistence version="2.2"
              xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+             
 <!--  EntityManagerFactory 생성 시 사용되는 persistence name 입니다. -->
-    <persistence-unit name="my-persistence">
+    <persistence-unit name="hrm">
+    
+    	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    	<!-- <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> -->
+    	<class>com.ssdam.hrm.employeeDto.Employee</class>
+    
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
