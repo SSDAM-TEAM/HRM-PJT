@@ -1,64 +1,64 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import AppHome from '@/views/AppHome.vue'
-import AppHeader from '@/components/common/AppHeader.vue'
-import AppFooter from '@/components/common/AppFooter.vue'
-import AppLogin from '@/views/AppLogin.vue'
-import AppEmployee from '@/views/AppEmployee.vue'
-import AppTimeline from '@/views/AppTimeline.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import AppHome from "@/views/AppHome.vue";
+import AppHeader from "@/components/common/AppHeader.vue";
+import AppFooter from "@/components/common/AppFooter.vue";
+import AppLogin from "@/views/AppLogin.vue";
+import AppEmployee from "@/views/AppEmployee.vue";
+import AppTimeline from "@/views/AppTimeline.vue";
 
-import EmHome from '@/components/employee/EmployeeHome.vue'
-import EmCreate from '@/components/employee/EmployeeCreate.vue'
+import EmHome from "@/components/employee/EmployeeHome.vue";
+import EmCreate from "@/components/employee/EmployeeCreate.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
+    path: "/",
+    name: "home",
     components: {
       header: AppHeader,
       default: AppHome,
-      footer: AppFooter
-    }
+      footer: AppFooter,
+    },
   },
   {
-    path: '/login',
-    name: 'login',
+    path: "/login",
+    name: "login",
     components: {
       header: AppHeader,
       default: AppLogin,
-      footer: AppFooter
-    }
+      footer: AppFooter,
+    },
   },
   {
-    path: '/employee/',
-    name: 'employee',
+    path: "/employee",
+    name: "employee",
     components: {
       header: AppHeader,
       default: AppEmployee,
-      footer: AppFooter
+      footer: AppFooter,
     },
     children: [
-      {path: '', component: EmHome},
-      {path: 'emcreate', component: EmCreate}
-    ]
+      { path: "", component: EmHome },
+      { path: "emcreate", component: EmCreate },
+    ],
   },
   {
-    path: '/timeline',
-    name: 'timeline',
+    path: "/timeline",
+    name: "timeline",
     components: {
       header: AppHeader,
       default: AppTimeline,
-      footer: AppFooter
-    }
+      footer: AppFooter,
+    },
   },
-]
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

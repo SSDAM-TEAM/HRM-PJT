@@ -1,15 +1,15 @@
 <template>
   <header>
     <b-navbar class="topbar navbar navbar-expand-sm">
-      <router-link to="/" class="navbar-brand" style="margin-left: 20px;">
-        <img src="@/assets/logo.png" alt="logo" style="width: 40px;">
+      <router-link to="/" class="navbar-brand" style="margin-left: 20px">
+        <img src="@/assets/logo.png" alt="logo" style="width: 40px" />
       </router-link>
       <h2>HRM</h2>
       <router-link to="/employee" class="nav-link">계정</router-link>
     </b-navbar>
 
     <nav class="sidebar collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav" style="padding: 0;">
+      <ul class="navbar-nav" style="padding: 0">
         <li class="nav-item">
           <router-link to="/" class="nav-link">홈</router-link>
         </li>
@@ -26,19 +26,17 @@
 
 <script>
 export default {
-  name: 'AppHeader',
+  name: "AppHeader",
   data() {
-    return {
-
-    }
+    return {};
   },
-}
+};
 </script>
 
 <style>
 .topbar {
   display: flex;
-  align-items : center;
+  align-items: center;
   margin: 0;
   padding: 0;
   align-content: center;

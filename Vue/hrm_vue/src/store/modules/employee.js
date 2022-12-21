@@ -22,7 +22,7 @@ const employeeStore = {
   },
   mutations: {
     // 사원정보 등록? -> 이건 action?
-    // createEmployee(state, payload) {},
+    // createEmployee(context) {},
   },
   actions: {},
 };

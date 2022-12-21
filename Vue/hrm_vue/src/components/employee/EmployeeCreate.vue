@@ -4,133 +4,131 @@
       <b-row class="my-1">
         <!-- 사번 -->
         <b-col sm="2">
-          <label for="input-default">사번:</label>
+          <label>사번:</label>
         </b-col>
         <b-col sm="10">
-          <b-form-input
-            id="input-default"
-            placeholder="사번입력"
-          ></b-form-input>
+          <b-form-input placeholder="사번입력"></b-form-input>
         </b-col>
         <!-- 이름 -->
         <b-col sm="2">
-          <label for="input-default">이름:</label>
+          <label>이름:</label>
         </b-col>
         <b-col sm="10">
-          <b-form-input
-            id="input-default"
-            placeholder="Enter your name"
-          ></b-form-input>
+          <b-form-input placeholder="Enter your name"></b-form-input>
         </b-col>
         <!-- 비밀번호 -->
         <b-col sm="2">
-          <label for="input-default">비밀번호:</label>
+          <label>비밀번호:</label>
         </b-col>
         <b-col sm="10">
-          <b-form-input
-            id="input-default"
-            placeholder="Enter your name"
-          ></b-form-input>
+          <b-form-input placeholder="Enter your name"></b-form-input>
         </b-col>
         <!-- 직급 -->
         <b-col sm="2">
-          <label for="input-default">직급:</label>
+          <label>직급:</label>
         </b-col>
         <b-col sm="10">
-          <b-form-input
-            id="input-default"
-            placeholder="Enter your name"
-          ></b-form-input>
+          <div>
+            <b-form-select
+              v-model="getEmployee.positionId"
+              :options="positionOptions"
+            ></b-form-select>
+          </div>
         </b-col>
         <!-- 전화번호 -->
         <b-col sm="2">
-          <label for="input-default">전화번호:</label>
+          <label>전화번호:</label>
         </b-col>
         <b-col sm="10">
-          <b-form-input
-            id="input-default"
-            placeholder="Enter your name"
-          ></b-form-input>
+          <b-form-input placeholder="Enter your name"></b-form-input>
         </b-col>
         <!-- 주소 -->
         <b-col sm="2">
-          <label for="input-default">주소:</label>
+          <label>주소:</label>
         </b-col>
         <b-col sm="10">
-          <b-form-input
-            id="input-default"
-            placeholder="Enter your name"
-          ></b-form-input>
+          <b-form-input placeholder="Enter your name"></b-form-input>
         </b-col>
 
         <!-- 생일 -->
         <b-col sm="2">
           <!-- 생일은 반드시 4자리 -->
-          <label for="input-default">년:</label>
+          <label>생년월일:</label>
         </b-col>
         <b-col sm="10">
-          <b-form-input
-            id="input-default"
-            placeholder="ex) 1995"
-          ></b-form-input>
-        </b-col>
-        <b-col sm="2">
-          <label for="input-default">월:</label>
-        </b-col>
-        <b-col sm="10">
-          <b-form-input id="input-default" placeholder="ex) 02"></b-form-input>
-        </b-col>
-        <b-col sm="2">
-          <label for="input-default">일:</label>
-        </b-col>
-        <b-col sm="10">
-          <b-form-input id="input-default" placeholder="ex) 05"></b-form-input>
+          <b-form-datepicker
+            id="example-datepicker"
+            v-model="getEmployee.birth"
+            class="mb-2"
+          ></b-form-datepicker>
         </b-col>
 
         <!-- 사진? -->
         <b-col sm="2">
-          <label for="input-default">사진?:</label>
+          <label>사진?:</label>
         </b-col>
         <b-col sm="10">
-          <b-form-input
-            id="input-default"
-            placeholder="Enter your name"
-          ></b-form-input>
+          <b-form-input placeholder="Enter your name"></b-form-input>
         </b-col>
         <!-- 상태 -->
         <b-col sm="2">
-          <label for="input-default">상태:</label>
+          <label>상태:</label>
         </b-col>
         <b-col sm="10">
-          <b-form-input
-            id="input-default"
-            placeholder="Enter your name"
-          ></b-form-input>
+          <div>
+            <b-form-select
+              v-model="getEmployee.state"
+              :options="stateOptions"
+            ></b-form-select>
+          </div>
         </b-col>
         <!-- 접근 권한 -->
         <b-col sm="2">
-          <label for="input-default">접근권한:</label>
+          <label>접근권한:</label>
         </b-col>
         <b-col sm="10">
-          <b-form-input
-            id="input-default"
-            placeholder="Enter your name"
-          ></b-form-input>
+          <div>
+            <b-form-select
+              v-model="getEmployee.accessLevel"
+              :options="accessLevelOptions"
+            ></b-form-select>
+          </div>
         </b-col>
       </b-row>
+
+      <b-button>사원등록</b-button>
     </b-container>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "EmCreate",
-  components: {},
+  // components: {},
   data() {
     return {
-      id: null,
-      name: null,
-      password: null,
+      ...mapGetters(["getEmployee"]),
+      positionOptions: [
+        { value: 1, text: "사원" },
+        { value: 2, text: "대리" },
+        { value: 3, text: "과장" },
+        { value: 4, text: "차장" },
+        { value: 5, text: "부장" },
+      ],
+      stateOptions: [
+        { value: 1, text: "입사" },
+        { value: 2, text: "퇴사" },
+        { value: 3, text: "휴가" },
+      ],
+      accessLevelOptions: [
+        { value: 1, text: "사원급" },
+        { value: 2, text: "대리급" },
+        { value: 3, text: "과장급" },
+        { value: 4, text: "차장급" },
+        { value: 5, text: "부장급" },
+      ],
     };
   },
 };
