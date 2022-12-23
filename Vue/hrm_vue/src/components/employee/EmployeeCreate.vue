@@ -96,13 +96,14 @@
         </b-col>
       </b-row>
 
-      <b-button>사원등록</b-button>
+      <b-button @click="cli">사원등록</b-button>
     </b-container>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import apiInstance from "@/api/index.js";
 
 export default {
   name: "EmCreate",
@@ -131,6 +132,16 @@ export default {
       ],
     };
   },
+  methods:{
+    cli(){
+      console.log('click');
+      console.log(process.env);
+      const api = apiInstance();
+      api.get('employee/test')
+      .then(data => console.log(data))
+      .catch(data => console.log(data));
+    }
+  }
 };
 </script>
 
